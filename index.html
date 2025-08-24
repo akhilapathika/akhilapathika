@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pathika Akhila — Portfolio</title>
+  <meta name="description" content="Portfolio of Pathika Akhila — Data Science Student & MERN Full-Stack Developer from Tirupati, Andhra Pradesh." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyanAccent: '#67e8f9',
+            noir1: '#0f0c29',
+            noir2: '#302b63',
+            noir3: '#24243e'
+          },
+          boxShadow: {
+            neon: '0 0 20px rgba(103,232,249,0.35), inset 0 0 12px rgba(103,232,249,0.15)',
+          },
+          dropShadow: {
+            glow: '0 0 8px rgba(103,232,249,0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="min-h-screen text-slate-200 relative">
+
+  <!-- Background animated gradient + noise -->
+  <div class="fixed inset-0 -z-20">
+    <div class="animated-gradient absolute inset-0"></div>
+    <div class="noise-layer absolute inset-0 pointer-events-none mix-blend-overlay"></div>
+    <div class="vignette absolute inset-0 pointer-events-none"></div>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-50 flex items-center justify-center bg-[#0b0a1a]">
+    <div class="flex flex-col items-center gap-6">
+      <svg id="loader-emblem" width="140" height="140" viewBox="0 0 140 140" fill="none">
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="140" y2="140">
+            <stop offset="0%" stop-color="#67e8f9"/>
+            <stop offset="100%" stop-color="#7dd3fc"/>
+          </linearGradient>
+        </defs>
+        <circle cx="70" cy="70" r="54" stroke="url(#grad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.9"/>
+        <path id="emblem-path" d="M40 90 L40 35 L70 35 Q88 35 88 52 Q88 65 70 65 L40 65
+                                   M70 65 L100 90
+                                   M88 52 L100 52" 
+              stroke="url(#grad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <circle id="emblem-fill" cx="70" cy="70" r="0" fill="url(#grad)" opacity="0.12"/>
+      </svg>
+      <div class="tracking-widest text-cyan-100/80 text-sm">INITIALIZING</div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-40 backdrop-blur-md bg-white/5 border-b border-white/10">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#home" class="font-extrabold text-lg tracking-wide text-white hover:text-cyanAccent transition">PA</a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#about" class="nav-link">👤 About</a>
+        <a href="#career" class="nav-link">🎯 Career Objective</a>
+        <a href="#education" class="nav-link">🎓 Education</a>
+        <a href="#skills" class="nav-link">🧰 Skills</a>
+        <a href="#projects" class="nav-link">🧪 Projects</a>
+        <a href="#achievements" class="nav-link">🏆 Achievements</a>
+        <a href="#hobbies" class="nav-link">🎮 Hobbies</a>
+        <a href="#contact" class="nav-link">📬 Contact</a>
+      </nav>
+      <button id="openResume" class="btn-primary">📄 View Resume</button>
+    </div>
+  </header>
+
+  <main id="home" class="pt-28">
+
+    <!-- Hero -->
+    <section class="container mx-auto px-6 py-24 md:py-28 reveal">
+      <div class="grid md:grid-cols-5 gap-10 items-center">
+        <div class="md:col-span-3">
+          <h1 class="text-4xl md:text-6xl font-extrabold leading-tight text-white">
+            <span class="hero-word">Pathika</span>
+            <span class="hero-word">Akhila</span>
+          </h1>
+          <p class="mt-3 text-slate-300">
+            Tirupati, Andhra Pradesh • 
+            <a href="mailto:pathikaakhila2522@gmail.com" class="text-cyanAccent hover:drop-shadow-glow">pathikaakhila2522@gmail.com</a>
+          </p>
+          <p class="mt-2 text-cyanAccent font-semibold tracking-wide">
+            <span class="hero-word text-xl md:text-2xl">Computer</span>
+            <span class="hero-word text-xl md:text-2xl">Science</span>
+            <span class="hero-word text-xl md:text-2xl">(Data</span>
+            <span class="hero-word text-xl md:text-2xl">Science)</span>
+            <span class="hero-word text-xl md:text-2xl">&</span>
+            <span class="hero-word text-xl md:text-2xl">MERN</span>
+            <span class="hero-word text-xl md:text-2xl">Developer</span>
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="https://pillabachcharabittoooportofile.netlify.app/" target="_blank" rel="noopener" class="btn-cta">🌐 Portfolio</a>
+            <a href="https://github.com/akhilapathika" target="_blank" rel="noopener" class="btn-cta">💻 GitHub</a>
+            <a href="https://www.linkedin.com/in/akhila-pathika-30134b341/" target="_blank" rel="noopener" class="btn-cta">💼 LinkedIn</a>
+            <a href="https://geeksforgeeks.org/user/pathikaak6iaz" target="_blank" rel="noopener" class="btn-ghost">🧠 GeeksforGeeks</a>
+            <a href="https://leetcode.com/u/pathikaakhila" target="_blank" rel="noopener" class="btn-ghost">🧩 LeetCode</a>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+          <div class="glass p-6 rounded-full w-80 h-80 md:w-96 md:h-96 mx-auto shadow-neon reveal delay-200">
+            <img alt="Profile Photo" class="rounded-full w-full h-full object-cover"
+                 src="assets/images/profile1.jpg" height="200" width="200"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="container mx-auto px-6 py-16 reveal">
+      <div class="glass p-8 rounded-2xl">
+        <h2 class="section-title">👤 About Me</h2>
+        <p class="text-slate-300">
+          A detail-oriented and passionate Computer Science student specializing in Data Science, with hands-on experience in full-stack web development using the MERN stack. Proven ability to build robust applications and solve complex problems through strong analytical skills and a solid understanding of data structures and algorithms. Eager to contribute to innovative projects and grow professionally in a challenging environment.
+        </p>
+      </div>
+    </section>
+
+    <!-- Career -->
+    <section id="career" class="container mx-auto px-6 py-16 reveal">
+      <div class="glass p-8 rounded-2xl">
+        <h2 class="section-title">🎯 Career Objective</h2>
+        <p class="text-slate-300">
+          Build impactful, scalable systems and data-driven solutions while sharpening expertise in ML, backend architecture, and modern web interfaces.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="container mx-auto px-6 py-16 reveal">
+      <ul class="mt-4 space-y-3">
+        <li class="glass border border-white/10 hover:border-cyanAccent/40 transition rounded-xl p-4 text-slate-300">
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div class="text-white font-semibold">🎓 B.Tech – CSE (Data Science)</div>
+            <span class="text-xs text-cyanAccent/90 px-2 py-1 rounded-full border border-cyanAccent/40">2022–2026</span>
+          </div>
+          <div class="text-sm opacity-90 mt-1">Mohan Babu University, Tirupati</div>
+        </li>
+        <li class="glass border border-white/10 hover:border-cyanAccent/40 transition rounded-xl p-4 text-slate-300">
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div class="text-white font-semibold">📘 Intermediate (MPC)</div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-cyanAccent/90 px-2 py-1 rounded-full border border-cyanAccent/40">2022</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyanAccent text-[#001016] font-semibold">91%</span>
+            </div>
+          </div>
+          <div class="text-sm opacity-90 mt-1">Sree Chaitanya Junior College, A.P.</div>
+        </li>
+        <li class="glass border border-white/10 hover:border-cyanAccent/40 transition rounded-xl p-4 text-slate-300">
+          <div class="flex items-center justify-between gap-3 flex-wrap">
+            <div class="text-white font-semibold">📗 SSC (10th Standard)</div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-cyanAccent/90 px-2 py-1 rounded-full border border-cyanAccent/40">2020</span>
+              <span class="text-xs px-2 py-1 rounded-full bg-cyanAccent text-[#001016] font-semibold">99%</span>
+            </div>
+          </div>
+          <div class="text-sm opacity-90 mt-1">Sri Chaitanya School, Andhra Pradesh</div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="container mx-auto px-6 py-16 reveal">
+      <h2 class="section-title">🧰 Technical Skills</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="glass p-6 rounded-2xl reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M4 4h16v2H4zM4 9h16v2H4zM4 14h10v2H4zM4 19h10v2H4z" />
+            </svg>
+          </div>
+          <h3 class="card-title">💬 Languages</h3>
+          <p class="text-slate-300">Python, JavaScript, C</p>
+        </div>
+        <div class="glass p-6 rounded-2xl reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M12 2l9 5v10l-9 5-9-5V7zM12 7l-6 3.33V17l6 3.33L18 17V10.33z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">🖥️ Web Stack</h3>
+          <p class="text-slate-300">React.js, Node.js, Express.js, HTML5, CSS3, Bootstrap</p>
+        </div>
+        <div class="glass p-6 rounded-2xl reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M12 3C7 3 3 4.79 3 7v10c0 2.21 4 4 9 4s9-1.79 9-4V7c0-2.21-4-4-9-4zm0 2c4.42 0 7 .99 7 2s-2.58 2-7 2-7-.99-7-2 2.58-2 7-2z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">🗄️ Databases</h3>
+          <p class="text-slate-300">MongoDB, MySQL</p>
+        </div>
+        <div class="glass p-6 rounded-2xl reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M3 17l6-6 4 4 8-8 2 2-10 10-4-4-4 4z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">🧩 Core Concepts</h3>
+          <p class="text-slate-300">Data Structures, Algorithms, REST APIs</p>
+        </div>
+        <div class="glass p-6 rounded-2xl reveal">
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+              <path d="M19 18H6a4 4 0 010-8 5 5 0 019.58-1.36A4.5 4.5 0 1119 18z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">🛠️ Tools</h3>
+          <p class="text-slate-300">Git, GitHub, VS Code, Postman, Canva</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container mx-auto px-6 py-16 reveal">
+      <h2 class="section-title">🧪 Projects</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <article class="glass p-6 rounded-2xl reveal">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.Xptrnb59G6mSNPJy66gDIwHaD7?pid=Api&P=0&h=180" alt="MERN Blog Management App" class="rounded-lg mb-4 w-full h-40 object-cover">
+          <h3 class="card-title">AI Content Studio</h3>
+          <p class="text-slate-300">Full-stack app generating content using Gemini API with Firebase for storage; built end‑to‑end.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">Gemini API</span><span class="chip">Firebase</span><span class="chip">Node.js</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a class="btn-ghost" target="_blank" rel="noopener" href="https://github.com/akhilapathika/mern-blog-app">🔗 GitHub</a>
+          </div>
+        </article>
+
+        <article class="glass p-6 rounded-2xl reveal">
+          <img src="https://cdn1.vectorstock.com/i/1000x1000/45/20/event-management-concept-banner-header-vector-23614520.jpg" alt="Event Management CLI" class="rounded-lg mb-4 w-full h-40 object-cover">
+          <h3 class="card-title">Event Management CLI</h3>
+          <p class="text-slate-300">A command-line interface application built with Python for managing events, attendees, and scheduling.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="chip">File I/O</span><span class="chip">CLI</span><span class="chip">Python</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a class="btn-ghost" target="_blank" rel="noopener" href="https://github.com/akhilapathika/EventPlannerProject">🔗 Live Demo</a>
+          </div>
+        </article>
+
+        <article class="glass p-6 rounded-2xl reveal">
+          <img src="https://user-images.githubusercontent.com/89755021/258644677-272ac072-0702-4c83-9a79-a09a2eb43b4c.png" alt="Hotel Pineapple – Food Delivery Website" class="rounded-lg mb-4 w-full h-40 object-cover">
+          <h3 class="card-title">🍍 Hotel Pineapple – Food Delivery</h3>
+          <p class="text-slate-300">Responsive ordering site with engaging UI/UX, listings, and cart functionality.</p>
+          <div class="mt-4 flex flex-wrap gap-2">
+            <span class="chip">📄 HTML</span><span class="chip">🎨 CSS</span><span class="chip">🧩 JS</span>
+          </div>
+          <div class="mt-4 flex gap-3">
+            <a class="btn-ghost" target="_blank" rel="noopener" href="https://incandescent-lokum-6c3e28.netlify.app/">🔗 Live Demo</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="container mx-auto px-6 py-16 reveal">
+      <div class="glass p-8 rounded-2xl">
+        <h2 class="section-title">🏆 Achievements & Certifications</h2>
+
+        <ul class="space-y-3 text-slate-300">
+          <li class="flex items-center justify-between gap-4">
+            <span>Participant – iAccelerate Women’s Hackathon</span>
+            <button class="btn-ghost" data-cert-target="certItem1Modal">View</button>
+          </li>
+          <li class="flex items-center justify-between gap-4">
+            <span>GenAI Powered Data Analytics Job Simulation (Completed)</span>
+            <button class="btn-ghost" data-cert-target="certItem2Modal">View</button>
+          </li>
+          <li class="flex items-center justify-between gap-4">
+            <span>Multiple courses (Infosys Springboard)</span>
+            <button class="btn-ghost" data-cert-target="certItem3Modal">View</button>
+          </li>
+          <li class="flex items-center justify-between gap-4">
+            <span>6-week course on Full Stack Developer Bootcamp</span>
+            <button class="btn-ghost" data-cert-target="certItem4Modal">View</button>
+          </li>
+          <li class="flex items-center justify-between gap-4">
+            <span>6-week course on Python Full Course Online</span>
+            <button class="btn-ghost" data-cert-target="certItem5Modal">View</button>
+          </li>
+          <li class="flex items-center justify-between gap-4">
+            <span>Introduction to Generative AI Studio</span>
+            <button class="btn-ghost" data-cert-target="certItem6Modal">View</button>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- Hobbies -->
+    <section id="hobbies" class="container mx-auto px-6 py-16 reveal">
+      <h2 class="section-title">🎮 Hobbies</h2>
+      <div class="glass p-6 rounded-2xl">
+        <p class="text-slate-300">
+          🏏 Playing sports • 🎬 Watching movies • 🎧 Listening to music • 🗣️ Friendly conversations
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="container mx-auto px-6 py-16 reveal">
+      <h2 class="section-title">📬 Contact</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass p-6 rounded-2xl">
+          <p class="text-slate-300">
+            ✉️ Email:
+            <a href="mailto:pathikaakhila2522@gmail.com" class="text-cyanAccent hover:drop-shadow-glow">pathikaakhila2522@gmail.com</a>
+          </p>
+          <p class="text-slate-300 mt-2">🤝 Open to internships, collaborations, and research projects.</p>
+        </div>
+        <div class="glass p-6 rounded-2xl">
+          <div class="flex flex-wrap gap-3">
+            <a href="https://pillabachcharabittoooportofile.netlify.app/" target="_blank" rel="noopener" class="btn-ghost">🌐 Portfolio</a>
+            <a href="https://github.com/akhilapathika" target="_blank" rel="noopener" class="btn-ghost">💻 GitHub</a>
+            <a href="https://geeksforgeeks.org/user/pathikaak6iaz" target="_blank" rel="noopener" class="btn-ghost">🧠 GfG</a>
+            <a href="https://leetcode.com/u/pathikaakhila" target="_blank" rel="noopener" class="btn-ghost">🧩 LeetCode</a>
+            <a href="https://www.linkedin.com/in/akhila-pathika-30134b341/" target="_blank" rel="noopener" class="btn-ghost">💼 LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-white/5 backdrop-blur-md">
+    <div class="container mx-auto px-6 py-6 text-sm text-slate-400 flex flex-col md:flex-row items-center justify-between">
+      <div>© <span id="year"></span> Pathika Akhila. All rights reserved.</div>
+      <div class="flex gap-4 mt-3 md:mt-0">
+        <a href="#home" class="nav-link">🏠 Home</a>
+        <a href="#projects" class="nav-link">🧪 Projects</a>
+        <a href="#contact" class="nav-link">📬 Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Resume Modal -->
+  <div id="resumeModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Resume">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">📄 Resume</h3>
+        <button class="modal-close" data-close="resumeModal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl"
+                src="assets\pdfs\Resume — Pathika Akhila.pdf"
+                title="Resume PDF" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Certificate Modals (unique IDs, your paths unchanged) -->
+  <div id="certItem1Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="iAccelerate Hackathon Certificate">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">iAccelerate Women’s Hackathon</h3>
+        <button class="modal-close" data-close="certItem1Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\1.pdf" title="iAccelerate Certificate" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="certItem2Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="GenAI Job Simulation Certificate">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">GenAI Powered Data Analytics Simulation</h3>
+        <button class="modal-close" data-close="certItem2Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\2.pdf" title="GenAI Simulation Certificate" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="certItem3Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Infosys Springboard Courses">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">Courses (Infosys Springboard)</h3>
+        <button class="modal-close" data-close="certItem3Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\3.pdf" title="Infosys Springboard Courses" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="certItem4Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Full Stack Developer Bootcamp">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">6-week course on Full Stack Developer Bootcamp</h3>
+        <button class="modal-close" data-close="certItem4Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\4.pdf" title="Full Stack Developer Bootcamp" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="certItem5Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Python Full Course Online">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">6-week course on Python Full Course Online</h3>
+        <button class="modal-close" data-close="certItem5Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\5.pdf" title="Python Full Course Online" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div id="certItem6Modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Introduction to Generative AI Studio">
+      <div class="modal-header">
+        <h3 class="text-white font-semibold">Introduction to Generative AI Studio</h3>
+        <button class="modal-close" data-close="certItem6Modal" aria-label="Close">✖️</button>
+      </div>
+      <div class="modal-body">
+        <iframe class="w-full h-[70vh] rounded-xl" src="assets\pdfs\6.pdf" title="Introduction to Generative AI Studio" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- GSAP & Lenis -->
+  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.37/bundled/lenis.min.js"></script>
+
+  <!-- App -->
+  <script src="script.js" defer></script>
+</body>
+</html>
